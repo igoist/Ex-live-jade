@@ -1,0 +1,402 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    /*height: 100%;*/
+    font-family: -apple-system-font, "Helvetica Neue", Tahoma, "PingFang SC", "Microsoft Yahei", sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+.anchor {
+    position: relative;
+}
+
+.hdhash {
+    position: absolute;
+    top: -50px;
+}
+
+.fix::after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 0;
+    height: 0;
+}
+
+.navi {
+    position: fixed;
+    z-index: 9;
+    height: 76px;
+    width: 100%;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+    transition: all 0.15s ease-in-out;
+}
+
+.navi.fix {
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 50px;
+}
+
+.navi .logo {
+    display: inline-block;
+    width: 130px;
+    height: 100%;
+    background: url(/static/images/logo.svg) 0 center no-repeat;
+}
+
+.navi.fix .logo {
+    background-image: url(/static/images/logo-color.svg);
+    background-size: 86%;
+}
+
+.navi .close {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 76px;
+    z-index: 2;
+}
+
+.navi.fix .close {
+    height: 50px;
+}
+
+.mbonly {
+     display: none; 
+}
+
+.navi .links {
+    float: right;
+    width: 50%;
+    text-align: right;
+    position: relative;
+}
+
+.navi .links ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+.navi .links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    line-height: 76px;
+    margin-left: 25px;
+}
+
+.navi.fix .links a {
+    color: #333;
+    line-height: 50px;
+}
+
+.fw.inner {
+    width: 100%;
+    max-width: 1140px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.item.banner {
+    /*background-image: url(//hb-prd.b0.upaiyun.com/images/live/henglan/head-bg.png);*/
+    background-image: url(/static/images/head-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+    height: 500px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.item.banner h2 {
+    text-indent: -999em;
+    width: 60%;
+    height: 212px;
+    background: url(images/title.png) 0 center no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -110px;
+}
+
+.item.banner h2 {
+    background-image: url(//hb-prd.b0.upaiyun.com/images/live/henglan/title.png);
+}
+
+.item.banner h2 span {
+    text-indent: 0;
+    position: absolute;
+    bottom: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+    text-align: left;
+    left: 40px;
+}
+
+.item.banner h2 span i {
+    font-style: normal;
+    line-height: 1.5em;
+    padding-right: 1em;
+    margin-right: 1em;
+    border-right: 1px solid #fff;
+}
+
+.item.banner h2 span i:last-child {
+    border-right: 0 none;
+}
+
+.item.banner img {
+    position: absolute;
+    right: 0;
+    top: 80px;
+}
+
+/* part3 player */
+.item.player {
+    background: #f7f7f7;
+}
+
+#player {
+    margin: 0 auto;
+    width: 1120px;
+    height: 537px;
+    border: 2px solid #66aaff;
+}
+
+/* part4 .item.info */
+.item.info {
+    text-align: left;
+    font-weight: 300;
+}
+
+.item.info .main {
+    float: left;
+    width: 65.6%;
+    margin-right: 3.2%;
+}
+
+.item.info h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #000;
+    margin: .8em 0;
+}
+
+.item.info p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8em;
+    margin-bottom: .8em;
+}
+
+.item.info .main h4 {
+    margin: .5em 0;
+}
+
+.item.info .main a {
+    color: #c90000;
+    outline: none;
+    position: relative;
+}
+
+.item.info .main img {
+    width: 100%;
+    outline: none;
+}
+
+.item.info hr {
+    border: 0;
+    height: 2px;
+    background: #ededed;
+    margin: 40px 0;
+}
+
+.item.info .main ol {
+    margin: 0 0 .8em 1.14em;
+}
+
+.item.info .main ol li {
+    line-height: 1.8;
+}
+
+.item.info .main .summary {
+    line-height: 1.8;
+    border: 2px solid #ededed;
+    border-width: 2px 0;
+    padding: 1em 0;
+    font-weight: normal;
+    margin-bottom: 2em;
+}
+
+.item.info .main .fancyimages {
+    font-size: 0;
+    margin: -5px;
+}
+
+.item.info .main .fancybox {
+    display: inline-block;
+    width: calc(50% - 10px);
+    margin: 5px;
+    overflow: hidden;
+}
+
+.item.info .main .fancybox img {
+    transition: all .2s ease;
+}
+
+.item.info .main .fancybox:hover img {
+    transform: scale(1.02);
+}
+
+.item.info .side {
+    float: right;
+    width: 31.2%;
+    position: relative;
+}
+
+.item.info .avtbox {
+    background: #f7f7f7;
+    padding: 0 20px 0 0;
+    margin-bottom: 20px;
+}
+
+.item.info .avtbox img {
+    float: left;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 160px;
+}
+
+.item.info .avtbox h4 {
+    font-size: 1rem;
+    padding: 15px 0 10px;
+}
+
+.item.info .side p {
+    font-size: .875em;
+}
+
+/* part5 archive 往期*/
+.item.archive {
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    background-color: #f8f8f8;
+}
+
+.item.archive h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 20px 0 30px;
+}
+
+.item.archive .cols {
+    font-size: 0;
+}
+
+.item.archive .cols .col {
+    display: inline-block;
+}
+
+.item.archive .cols .col:first-child {
+    margin-left: 0;
+}
+
+.item.archive .cols .col:last-child {
+    margin-right: 0;
+}
+
+.item.archive ul li {
+    list-style: none;
+    width: 31.2%;
+    margin: 1.6%;
+    overflow: hidden;
+    background-color: #fff;
+    padding-bottom: 30px;
+    text-align: left;
+    transition: all 0.15s ease-in-out;
+}
+
+.item.archive ul li:hover {
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
+}
+
+.item.archive ul li h4 {
+    font-size: 1rem;
+    line-height: 2em;
+    padding: 0 20px;
+    margin-top: .5em;
+}
+
+.item.archive ul li a {
+    display: block;
+}
+
+.item.archive ul li img {
+    width: 100%;
+}
+
+.item.archive ul li p {
+    font-size: .875rem;
+    line-height: 2em;
+    padding: 0 20px;
+    color: #777;
+}
+
+/* part6 live intro 花瓣 live 简介 */
+
+.item.live {
+    background: #fff;
+    padding: 110px 0;
+}
+
+.item.live p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    margin-top: .5em;
+    color: #555;
+}
+
+.item.live img {
+    margin-bottom: 20px;
+}
+
+/* part7 support 技术支持 */
+.item.support {
+    border-top: 1px solid #ededed;
+    padding: 80px 0;
+}
+
+.item.support h3 {
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* part8 footer */
+.item.footer {
+    background: #333;
+    color: #ddd;
+    padding: 50px 0;
+    font-weight: 300;
+    letter-spacing: .05em;
+}

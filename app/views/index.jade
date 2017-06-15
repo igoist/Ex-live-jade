@@ -1,0 +1,93 @@
+doctype html
+html
+    head
+        title!= req.title
+        meta(charset="utf-8")
+        link(rel="stylesheet", type="text/css" href="/static/css/base.css")
+    body
+        //- navigator 导航栏 & banner 背景
+        include ./base/banner.jade
+        //- player 播放器
+        .item.player.anchor
+            span#watch.hdhash
+            #player
+        //- info 信息介绍
+        .item.info
+            .fw.inner.fix
+                .main
+                    .course.anchor
+                        #info.hdhash
+                        h3 关于课程
+                        .summary
+                            | 主讲：恒兰
+                            br
+                            | 价格：9.9 元
+                            br
+                            | 时长：2 小时
+                        h4 课程介绍
+                        p 画画是让人放松，让人愉悦的事情。不愁心没有强大的透视，不担忧错过色彩的洗礼，把它们暂且放一放吧，享受一个只有红和黑相互交融的别样时光。吵杂的城市里空出一个角落，留给愿意拿起笔跟随自己的心画张小画的你。一杯茶，两只笔，给你一个简单而繁华的纸上世界。
+                        h4 课程提纲
+                        ol
+                            each v in req.lesson.outline
+                                li!= v 
+                        h4 画手作品
+                        p.fancyimages.even
+                            each v in req.lesson.works
+                                a.fancybox(href!=v.a, data-fancybox="gallery")
+                                    img(src!=v.img, alt!=v.alt)
+                    //- end .course.anchor
+                    .referance.anchor
+                        span#ref.hdhash
+                        hr
+                        div
+                            h3 课程资料
+                            p 课程结束后，管理员会将相关资料更新在这里。
+                            hr
+                            p 参与用户调查，帮我们改进花瓣 live：
+                                a(href!= req.lesson.surveyLink) 点击参与
+                    //- end .reference.anchor
+                //- end .main
+                .side.anchor
+                    span#teacher.hdhash
+                    h3 关于主播
+                    .avtbox.fix
+                        img(src!= req.teacher.img)
+                        h4!= req.teacher.name
+                        p!= req.teacher.intro
+                    .tc-info
+                        each v in req.teacher.info
+                            p!= v
+                //- end .side.anchor
+        //- archive 往期介绍，需要做成较大的类轮播列表
+        .item.archive.anchor
+            .fw.inner
+                span#archive.hdhash
+                h3 往期 live
+                .cols
+                    ul
+                        each v in req.archive
+                            li.col
+                                a(target="_blank", href!= v.href)
+                                    img(src!= v.img)
+                                h4
+                                    a(target="_blank", href!= v.href) v.title
+                                p!= v.p
+        //- end .item.archive.anchor 往期介绍
+        //- 花瓣 live 简介
+        .item.live
+            img(src="/static/images/logo-color.svg")
+            p 花瓣 Live，是花瓣旗下面向创意内容的直播平台，
+            p 通过花瓣 Live，您可以向千万设计师发起课程、活动邀约
+        //- end .item.live 花瓣 live 简介
+        //- support 技术支持
+        .item.support
+            h3 独家技术支持
+            a(target="_blank", href="https://shangzhibo.tv/?from=huaban")
+                img(src="/static/images/logo-szb.svg", alt="")
+        //- end support 技术支持
+        //- footer
+        include ./base/footer.jade
+
+        script(src="/static/js/lib/jquery.js")
+        script(src="/static/js/lib/jquery.nav.js")
+        script(src="/static/js/index.js")
