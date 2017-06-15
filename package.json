@@ -1,0 +1,15 @@
+{
+  "name": "Ex-huaban-live-pure",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app/app.js"
+  },
+  "author": "igoist",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "jade": "^1.11.0"
+  }
+}

@@ -1,0 +1,7 @@
+.DS_Store
+#.nvmrc
+node_modules/
+
+img/
+imgs/
+images/
