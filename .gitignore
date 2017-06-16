@@ -5,7 +5,7 @@ node_modules/
 img/
 imgs/
 images/
-*.html
+index.html
 
 lib/
 trick-code.js

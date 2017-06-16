@@ -74,20 +74,13 @@ html
                                 p!= v.p
         //- end .item.archive.anchor 往期介绍
         //- 花瓣 live 简介
-        .item.live
-            img(src="/static/images/logo-color.svg")
-            p 花瓣 Live，是花瓣旗下面向创意内容的直播平台，
-            p 通过花瓣 Live，您可以向千万设计师发起课程、活动邀约
+        include ./base/live-intro.html
         //- end .item.live 花瓣 live 简介
         //- support 技术支持
-        .item.support
-            h3 独家技术支持
-            a(target="_blank", href="https://shangzhibo.tv/?from=huaban")
-                img(src="/static/images/logo-szb.svg", alt="")
+        include ./base/support.html
         //- end support 技术支持
         //- footer
         include ./base/footer.jade
-
         script(src="/static/js/lib/jquery.js")
         script(src="/static/js/lib/jquery.nav.js")
         script(src="/static/js/index.js")
