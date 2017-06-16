@@ -1,0 +1,46 @@
+.item.info
+    .fw.inner.fix
+        .main
+            .course.anchor
+                #info.hdhash
+                h3 关于课程
+                .summary
+                    | 主讲：恒兰
+                    br
+                    | 价格：9.9 元
+                    br
+                    | 时长：2 小时
+                h4 课程介绍
+                p 画画是让人放松，让人愉悦的事情。不愁心没有强大的透视，不担忧错过色彩的洗礼，把它们暂且放一放吧，享受一个只有红和黑相互交融的别样时光。吵杂的城市里空出一个角落，留给愿意拿起笔跟随自己的心画张小画的你。一杯茶，两只笔，给你一个简单而繁华的纸上世界。
+                h4 课程提纲
+                ol
+                    each v in req.lesson.outline
+                        li!= v 
+                h4 画手作品
+                p.fancyimages.even
+                    each v in req.lesson.works
+                        a.fancybox(data-fancybox="gallery")
+                            img(src!=v.img, alt!=v.alt)
+            //- end .course.anchor
+            .referance.anchor
+                span#ref.hdhash
+                hr
+                div
+                    h3 课程资料
+                    p 课程结束后，管理员会将相关资料更新在这里。
+                    hr
+                    p 参与用户调查，帮我们改进花瓣 live：
+                        a(href!= req.lesson.surveyLink) 点击参与
+            //- end .reference.anchor
+        //- end .main
+        .side.anchor
+            span#teacher.hdhash
+            h3 关于主播
+            .avtbox.fix
+                img(src!= req.teacher.img)
+                h4!= req.teacher.name
+                p!= req.teacher.intro
+            .tc-info
+                each v in req.teacher.info
+                    p!= v
+        //- end .side.anchor

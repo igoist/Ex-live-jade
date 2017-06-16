@@ -1,0 +1,39 @@
+.hb-img-view {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 101;
+    overflow: hidden;
+    transition: background-color .2s ease-in-out;
+    cursor: zoom-out;
+}
+
+.hb-iv-is-active {
+    background-color: hsla(0,0%,100%,.9);
+}
+
+.hb-img-view-inner {
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.hb-img-view img {
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+}
+
+.zoom-in {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    /*filter: blur(4px);*/
+    z-index: 998;
+}
+

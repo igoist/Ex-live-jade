@@ -216,6 +216,8 @@ a {
     color: #c90000;
     outline: none;
     position: relative;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
 }
 
 .item.info .main img {
