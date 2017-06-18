@@ -6,41 +6,39 @@ html
         link(rel="stylesheet", type="text/css" href="/static/css/base.css")
         link(rel="stylesheet", type="text/css" href="/static/css/util.css")
     body
-        //- navigator 导航栏 & banner 背景
-        include ./base/banner.jade
-        //- player 播放器
-        .item.player.anchor
-            span#watch.hdhash
-            #player
-        //- info 信息介绍
-        include ./base/live-info.jade
-        //- archive 往期介绍，需要做成较大的类轮播列表
-        .item.archive.anchor
-            .fw.inner
-                span#archive.hdhash
-                h3 往期 live
-                .cols
-                    ul
-                        each v in req.archive
-                            li.col
-                                a(target="_blank", href!= v.href)
-                                    img(src!= v.img)
-                                h4
-                                    a(target="_blank", href!= v.href) v.title
-                                p!= v.p
-        //- end .item.archive.anchor 往期介绍
-        //- 花瓣 live 简介
-        include ./base/live-intro.html
-        //- end .item.live 花瓣 live 简介
-        //- support 技术支持
-        include ./base/support.html
-        //- end support 技术支持
-        //- footer
-        include ./base/footer.jade
-        //- end footer
-        //- .hb-img-view.hb-iv-is-active
-        //-     .hb-img-view-inner
-        //-         img(src="http://hb-prd.b0.upaiyun.com/images/2017/06/e1249c58b4c158f1f36ff8a3c9527b6e.jpg!sq500")
+        .hb-wrap
+            //- navigator 导航栏 & banner 背景
+            include ./base/banner.jade
+            //- player 播放器
+            .item.player.anchor
+                span#watch.hdhash
+                #player
+            //- info 信息介绍
+            include ./base/live-info.jade
+            //- archive 往期介绍，需要做成较大的类轮播列表
+            .item.archive.anchor
+                .fw.inner
+                    span#archive.hdhash
+                    h3 往期 live
+                    .cols
+                        ul
+                            each v in req.archive
+                                li.col
+                                    a(target="_blank", href!= v.href)
+                                        img(src!= v.img)
+                                    h4
+                                        a(target="_blank", href!= v.href) v.title
+                                    p!= v.p
+            //- end .item.archive.anchor 往期介绍
+            //- 花瓣 live 简介
+            include ./base/live-intro.html
+            //- end .item.live 花瓣 live 简介
+            //- support 技术支持
+            include ./base/support.html
+            //- end support 技术支持
+            //- footer
+            include ./base/footer.jade
+            //- end footer
         script(src="/static/js/lib/jquery.js")
         script(src="/static/js/lib/jquery.nav.js")
         script(src="/static/js/index.js")

@@ -82,9 +82,10 @@ zoom.classList.add('hb-img-view');
 zoom.classList.add('hb-iv-is-active');
 zoom.appendChild(hbIvInner);
 
-console.log(zoom);
+var hbWrap = document.querySelector('.hb-wrap');
 
 zoom.addEventListener('click', function(e) {
+	hbWrap.classList.remove('effect-blur');
 	zoom.remove();
 	enable_scroll();
 	// e.preventDefault();
@@ -109,6 +110,7 @@ var bindFb = function(item) {
 		// console.log(tmpScale);
 
 		setTimeout(function() {
+			hbWrap.classList.add('effect-blur');
 			zoom.firstChild.firstChild.style.width = '500px'; 
 			// left = (window.innerWidth - zoom.firstChild.firstChild.offsetWidth) / 2;
 			// top = (window.innerHeight - zoom.firstChild.firstChild.offsetHeight) / 2;

@@ -25,3 +25,8 @@
     transition: transform .3s ease-in-out, width .3s ease-in-out;
     /*transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;*/
 }
+
+.hb-wrap.effect-blur {
+    transition: filter .3s ease-in-out;
+    filter: blur(2px);
+}
