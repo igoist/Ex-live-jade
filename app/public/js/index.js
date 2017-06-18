@@ -102,13 +102,19 @@ var bindFb = function(item) {
 		var left = getELeft(item.firstChild);
 		var top = getETop(item.firstChild);
 		top = top - window.pageYOffset;
-		zoom.firstChild.firstChild.style.transform = 'translate(' + left + 'px, ' + top + 'px)'; 
+		zoom.firstChild.firstChild.style.width = '362px'; 
+		zoom.firstChild.firstChild.style.transform = 'translate(' + left + 'px, ' + top + 'px)'; //  scale(' + tmpScale + ')
 		document.body.appendChild(zoom);
-		
+		// var tmpScale = item.firstChild.width / zoom.firstChild.firstChild.width;
+		// console.log(tmpScale);
+
 		setTimeout(function() {
-			left = (window.innerWidth - zoom.firstChild.firstChild.offsetWidth) / 2;
-			top = (window.innerHeight - zoom.firstChild.firstChild.offsetHeight) / 2;
-			zoom.firstChild.firstChild.style.transform = 'translate(' + left + 'px, ' + top + 'px)'; 
+			zoom.firstChild.firstChild.style.width = '500px'; 
+			// left = (window.innerWidth - zoom.firstChild.firstChild.offsetWidth) / 2;
+			// top = (window.innerHeight - zoom.firstChild.firstChild.offsetHeight) / 2;
+			left = (window.innerWidth - 500) / 2;
+			top = (window.innerHeight - 500) / 2;
+			zoom.firstChild.firstChild.style.transform = 'translate(' + left + 'px, ' + top + 'px)';
 		}, 6);
 	});
 }
