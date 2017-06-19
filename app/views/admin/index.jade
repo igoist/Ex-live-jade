@@ -5,6 +5,9 @@ html
         meta(charset="utf-8")
         link(rel="stylesheet", type="text/css" href="/static/bootstrap/css/bootstrap.css")
         link(rel="stylesheet", type="text/css" href="/static/css/admin.css")
+        //- for datetime-picker
+        link(rel="stylesheet", type="text/css" href="/static/components/datetime-picker/bootstrap-datetimepicker.css")
+        //- end for datetime-picker
     body.hb-admin
         //- admin nav
         .hb-nav-wrap
@@ -30,18 +33,57 @@ html
                             td 编辑
         .hb-admin-content-wrap
             .hb-admin-tabs
+                .hb-admin-tabs-trick
                 .hb-admin-tab.active live 配置
                 .hb-admin-tab 课程资料
                 .hb-admin-tab 通知
             #hb-live-config
-                form
+                form.form-horizontal
                     h3 基本信息
                     hr
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 直播名称
+                        .col-sm-6.col-md-6.col-lg-6
+                            input#hb-lc-name.form-control(type='text', placeholder='直播名称')
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 直播ID
+                        .col-sm-6.col-md-6.col-lg-6
+                            input#hb-lc-name.form-control(type='text', placeholder='直播ID')
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 开始时间
+                        .col-sm-6.col-md-6.col-lg-6
+                            .input-group
+                                input#hb-lc-start.form-control(size='16', type='text', placeholder='请选择时间', readonly)
+                                #dtpicker-start-open.input-group-addon
+                                    span.add-on
+                                        i.glyphicon.glyphicon-calendar
+                                #dtpicker-start-reset.input-group-addon
+                                    span.add-on
+                                        i.glyphicon.glyphicon-remove
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 价格
+                        .col-sm-6.col-md-6.col-lg-6
+                            input#hb-lc-name.form-control(type='text', placeholder='价格')
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 主播姓名
+                        .col-sm-6.col-md-6.col-lg-6
+                            input#hb-lc-name.form-control(type='text', placeholder='主播姓名')
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 主播头像
+                        .col-sm-6.col-md-6.col-lg-6
+                            input#hb-lc-name.form-control(type='text', placeholder='主播头像')
+                    .form-group
+                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 主播头衔
+                        .col-sm-6.col-md-6.col-lg-6
+                            input#hb-lc-name.form-control(type='text', placeholder='主播头衔')
 
 
 
 
         script(src="/static/js/lib/jquery.js")
         script(src="/static/bootstrap/js/bootstrap.js")
-        //- script(src="/static/js/lib/jquery.nav.js")
-        //- script(src="/static/js/index.js")
+        //- for datetime-picker
+        script(src="/static/components/datetime-picker/bootstrap-datetimepicker.js")
+        script(src="/static/components/datetime-picker/locales/bootstrap-datetimepicker.zh-CN.js")
+        //- end for datetime-picker
+        script(src="/static/js/admin.js")

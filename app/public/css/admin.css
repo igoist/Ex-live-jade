@@ -64,8 +64,12 @@
         color: #eee; }
   .hb-admin .hb-admin-content-wrap {
     margin: 0 auto;
-    margin-top: 100px;
     width: 76%; }
+    .hb-admin .hb-admin-content-wrap::before {
+      content: '';
+      width: 100%;
+      height: 100px;
+      display: block; }
     .hb-admin .hb-admin-content-wrap .hb-admin-tabs {
       height: 48px;
       position: relative; }
@@ -99,7 +103,13 @@
         left: 160px; }
     .hb-admin .hb-admin-content-wrap #hb-live-config {
       margin-top: 12px; }
-      .hb-admin .hb-admin-content-wrap #hb-live-config .form-control {
-        border-radius: 2px; }
+      .hb-admin .hb-admin-content-wrap #hb-live-config #hb-lc-start {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px; }
+        .hb-admin .hb-admin-content-wrap #hb-live-config #hb-lc-start:hover {
+          cursor: not-allowed; }
+
+#dtpicker-start-open {
+  border-left: none; }
 
 /*# sourceMappingURL=admin.css.map */

@@ -89,9 +89,15 @@ $c91: #919191;
     }
     .hb-admin-content-wrap {
         margin: 0 auto;
-        margin-top: $tTop;
+        // margin-top: $tTop;
         width: 76%;
         // background: #333; // 伏笔
+        &::before {
+            content: '';
+            width: 100%;
+            height: $tTop;
+            display: block;
+        }
         .hb-admin-tabs {
             height: 48px;
             position: relative;
@@ -143,7 +149,14 @@ $c91: #919191;
                 // margin: 0px;
             }
             .form-control {
-                border-radius: 2px;
+                // border-radius: 2px;
+            }
+            #hb-lc-start {
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+                &:hover {
+                    cursor: not-allowed;
+                }
             }
             
         }
@@ -153,3 +166,6 @@ $c91: #919191;
 // #hb-lc-name {
 
 // }
+#dtpicker-start-open {
+    border-left: none;
+}
