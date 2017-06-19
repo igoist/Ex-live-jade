@@ -11,8 +11,8 @@ lib/
 trick-code.js
 
 
-sass/
+# sass/
 .sass-cache/
-*.map
+# *.map
 
 bootstrap/
