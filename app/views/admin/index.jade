@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        title Admin
+        meta(charset="utf-8")
+        link(rel="stylesheet", type="text/css" href="/static/bootstrap/css/bootstrap.css")
+        link(rel="stylesheet", type="text/css" href="/static/css/admin.css")
+    body.hb-admin
+        //- admin nav
+        .hb-nav-wrap
+            .hb-nav
+                a.logo
+                .form-group
+                    input(placeholder='搜索').form-control.hb-nav-search
+                button#hb-admin-search.btn.btn-default 新建
+        //- end admin nav
+        //- admin home content
+        .hb-content-wrap(style='display: none')
+            table.table.table-hover 
+                thead
+                    tr
+                        th 直播名称
+                        th 开播时间
+                        th 操作选项
+                tbody
+                    each v in [1, 2, 3, 4, 5, 6, 7]
+                        tr
+                            td 直播名称
+                            td.hb-live-tdst 2017-06-30
+                            td 编辑
+        .hb-admin-content-wrap
+            .hb-admin-tabs
+                .hb-admin-tab.active live 配置
+                .hb-admin-tab 课程资料
+                .hb-admin-tab 通知
+            #hb-live-config
+                form
+                    h3 基本信息
+                    hr
+
+
+
+
+        script(src="/static/js/lib/jquery.js")
+        script(src="/static/bootstrap/js/bootstrap.js")
+        //- script(src="/static/js/lib/jquery.nav.js")
+        //- script(src="/static/js/index.js")

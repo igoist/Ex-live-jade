@@ -82,12 +82,11 @@ zoom.classList.add('hb-img-view');
 zoom.classList.add('hb-iv-is-active');
 zoom.appendChild(hbIvInner);
 
-console.log(zoom);
+// console.log(zoom);
 
 zoom.addEventListener('click', function(e) {
 	zoom.remove();
 	enable_scroll();
-	// e.preventDefault();
 });
 
 var fb = document.querySelectorAll('.fancybox');

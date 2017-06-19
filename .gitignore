@@ -9,3 +9,10 @@ index.html
 
 lib/
 trick-code.js
+
+
+sass/
+.sass-cache/
+*.map
+
+bootstrap/

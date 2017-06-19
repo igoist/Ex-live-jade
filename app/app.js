@@ -136,6 +136,10 @@ app.get('/lesson/:id', function(req, res) {
     res.send(json);
 });
 
+app.get('/admin/', function(req, res) {
+    res.render('admin/index');
+});
+
 
 app.listen(3198, function() {
     console.log('test');
