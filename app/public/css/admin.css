@@ -40,7 +40,8 @@
         background: #919191;
         border-color: #919191;
         outline: none;
-        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
+        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+        border-radius: 2px; }
         .hb-admin .hb-nav-wrap .hb-nav #hb-admin-search:hover {
           color: #ccffcc;
           background: #333;
@@ -66,7 +67,8 @@
     margin-top: 100px;
     width: 76%; }
     .hb-admin .hb-admin-content-wrap .hb-admin-tabs {
-      height: 48px; }
+      height: 48px;
+      position: relative; }
       .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tab {
         float: left;
         margin: 7px 0px;
@@ -79,10 +81,25 @@
         box-sizing: border-box; }
         .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tab:last-child {
           border-right: 1px solid #919191; }
-      .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tab.active {
-        color: #fff;
-        background-color: #919191; }
+      .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tabs-trick {
+        position: absolute;
+        top: 7px;
+        left: 0px;
+        width: 81px;
+        height: 34px;
+        background: #333;
+        opacity: 0.2;
+        transition: 0.36s ease-in-out; }
+      .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tabs-trick.ti0 {
+        left: 0px; }
+      .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tabs-trick.ti1 {
+        left: 80px; }
+      .hb-admin .hb-admin-content-wrap .hb-admin-tabs .hb-admin-tabs-trick.ti2 {
+        width: 80px;
+        left: 160px; }
     .hb-admin .hb-admin-content-wrap #hb-live-config {
       margin-top: 12px; }
+      .hb-admin .hb-admin-content-wrap #hb-live-config .form-control {
+        border-radius: 2px; }
 
 /*# sourceMappingURL=admin.css.map */

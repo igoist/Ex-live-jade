@@ -48,7 +48,8 @@ $c91: #919191;
                 background: $c91;
                 border-color: $c91;
                 outline: none;
-                transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, ;
+                transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+                border-radius: 2px;
                 &:hover {
                     color: #ccffcc;
                     background: #333;
@@ -93,6 +94,7 @@ $c91: #919191;
         // background: #333; // 伏笔
         .hb-admin-tabs {
             height: 48px;
+            position: relative;
             .hb-admin-tab {
                 float: left;
                 margin: 7px 0px;
@@ -107,17 +109,47 @@ $c91: #919191;
                 &:last-child {
                     border-right: 1px solid $c91;
                 }
+                // transition: color 0.36s ease-in-out;
             }
-            .hb-admin-tab.active {
-                color: #fff;
-                background-color: $c91;
+            // .hb-admin-tab.active {
+            //     color: #ccffcc;
+            //     background-color: $c91;
+            // }
+            .hb-admin-tabs-trick {
+                position: absolute;
+                top: 7px;
+                left: 0px;
+                width: 81px;
+                height: 34px;
+                background: #333;
+                opacity: 0.2;
+                transition: 0.36s ease-in-out;
+            }
+            .hb-admin-tabs-trick.ti0 {
+                left: 0px;
+            }
+            .hb-admin-tabs-trick.ti1 {
+                left: 80px;
+            }
+            .hb-admin-tabs-trick.ti2 {
+                width: 80px;
+                left: 160px;
             }
         }
         #hb-live-config {
             // border-top: 1px solid #333; // 测试用例
             margin-top: 12px;
+            .form-group {
+                // margin: 0px;
+            }
+            .form-control {
+                border-radius: 2px;
+            }
             
         }
     }
 }
 
+// #hb-lc-name {
+
+// }
