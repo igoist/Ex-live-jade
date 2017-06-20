@@ -91,7 +91,6 @@ $c91: #919191;
         margin: 0 auto;
         // margin-top: $tTop;
         width: 76%;
-        // background: #333; // 伏笔
         &::before {
             content: '';
             width: 100%;
@@ -143,19 +142,40 @@ $c91: #919191;
             }
         }
         #hb-live-config {
-            // border-top: 1px solid #333; // 测试用例
             margin-top: 12px;
+            hr {
+            }
             .form-group {
                 // margin: 0px;
             }
             .form-control {
-                // border-radius: 2px;
+                border-radius: 2px;
             }
             #hb-lc-start {
-                border-top-left-radius: 2px;
-                border-bottom-left-radius: 2px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
                 &:hover {
                     cursor: not-allowed;
+                }
+                
+            }
+            #group-banner-bg {
+                height: calc(80px + 280px);
+                .form-check-label {
+                    margin-bottom: 0;
+                    padding-top: 7px;
+                    input {
+                        margin-right: 8px;
+                    }
+                }
+                #banner-bg-trick {
+                    position: absolute;
+                    padding: 0;
+                    top: 42px;
+                    left: 15px;
+                    width: 273px;
+                    // height: 280px;
+                    font-weight: normal;
                 }
             }
             
@@ -163,9 +183,18 @@ $c91: #919191;
     }
 }
 
-// #hb-lc-name {
 
-// }
 #dtpicker-start-open {
     border-left: none;
+}
+
+#dtpicker-start-reset {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.hb-admin-footer {
+    margin-bottom: 120px;
+    width: 0;
+    height: 0;
 }

@@ -15,6 +15,7 @@
         "**/.git": true,
         "**/.DS_Store": true,
         "**/.sass-cache/": true,
-        "**/*.map": true
+        "**/*.map": true,
+        "**/packages": true
     }
 }

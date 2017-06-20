@@ -31,3 +31,27 @@ $('#dtpicker-start-open').click(function() {
 $('#dtpicker-start-reset').click(function() {
     $('#hb-lc-start').val('');
 });
+
+// $('#hb-lc-avator').fileinput({
+//     'language': 'zh',
+//     // 'uploadUrl': '...',
+//     'showUpload': false,
+//     'allowedFileExtensions' : ['jpg', 'png'],
+//     // 'browseClass': "btn btn-default", //按钮样式   
+//     'previewFileIcon': "<i class='glyphicon glyphicon-king'></i>", 
+//     // 'previewFileType':'any'
+//     // initialPreview: [ //预览图片的设置
+//     //     "<img src='" + imageurl + "' class='file-preview-image' alt='肖像图片' title='肖像图片'>",
+//     // ],
+// });
+
+var imgInputArr = [$('#hb-lc-avator'), $('#hb-lc-header-pic'), $('#hb-lc-title-pic'), $('#hb-lc-banner-bgpic')];
+
+imgInputArr.map((i) => {
+    i.fileinput({
+        'language': 'zh',
+        'showUpload': false,
+        'allowedFileExtensions' : ['jpg', 'png'],
+        'previewFileIcon': "<i class='glyphicon glyphicon-king'></i>", 
+    });
+});

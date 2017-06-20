@@ -103,13 +103,38 @@
         left: 160px; }
     .hb-admin .hb-admin-content-wrap #hb-live-config {
       margin-top: 12px; }
+      .hb-admin .hb-admin-content-wrap #hb-live-config .form-control {
+        border-radius: 2px; }
       .hb-admin .hb-admin-content-wrap #hb-live-config #hb-lc-start {
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px; }
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px; }
         .hb-admin .hb-admin-content-wrap #hb-live-config #hb-lc-start:hover {
           cursor: not-allowed; }
+      .hb-admin .hb-admin-content-wrap #hb-live-config #group-banner-bg {
+        height: calc(80px + 280px); }
+        .hb-admin .hb-admin-content-wrap #hb-live-config #group-banner-bg .form-check-label {
+          margin-bottom: 0;
+          padding-top: 7px; }
+          .hb-admin .hb-admin-content-wrap #hb-live-config #group-banner-bg .form-check-label input {
+            margin-right: 8px; }
+        .hb-admin .hb-admin-content-wrap #hb-live-config #group-banner-bg #banner-bg-trick {
+          position: absolute;
+          padding: 0;
+          top: 42px;
+          left: 15px;
+          width: 273px;
+          font-weight: normal; }
 
 #dtpicker-start-open {
   border-left: none; }
+
+#dtpicker-start-reset {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; }
+
+.hb-admin-footer {
+  margin-bottom: 120px;
+  width: 0;
+  height: 0; }
 
 /*# sourceMappingURL=admin.css.map */

@@ -8,6 +8,9 @@ html
         //- for datetime-picker
         link(rel="stylesheet", type="text/css" href="/static/components/datetime-picker/bootstrap-datetimepicker.css")
         //- end for datetime-picker
+        //- for file-input
+        link(rel="stylesheet", type="text/css" href="/static/components/file-input/css/fileinput.css")
+        //- end for file-input
     body.hb-admin
         //- admin nav
         .hb-nav-wrap
@@ -39,51 +42,128 @@ html
                 .hb-admin-tab 通知
             #hb-live-config
                 form.form-horizontal
-                    h3 基本信息
-                    hr
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 直播名称
-                        .col-sm-6.col-md-6.col-lg-6
-                            input#hb-lc-name.form-control(type='text', placeholder='直播名称')
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 直播ID
-                        .col-sm-6.col-md-6.col-lg-6
-                            input#hb-lc-name.form-control(type='text', placeholder='直播ID')
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 开始时间
-                        .col-sm-6.col-md-6.col-lg-6
-                            .input-group
-                                input#hb-lc-start.form-control(size='16', type='text', placeholder='请选择时间', readonly)
-                                #dtpicker-start-open.input-group-addon
-                                    span.add-on
-                                        i.glyphicon.glyphicon-calendar
-                                #dtpicker-start-reset.input-group-addon
-                                    span.add-on
-                                        i.glyphicon.glyphicon-remove
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 价格
-                        .col-sm-6.col-md-6.col-lg-6
-                            input#hb-lc-name.form-control(type='text', placeholder='价格')
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 主播姓名
-                        .col-sm-6.col-md-6.col-lg-6
-                            input#hb-lc-name.form-control(type='text', placeholder='主播姓名')
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 主播头像
-                        .col-sm-6.col-md-6.col-lg-6
-                            input#hb-lc-name.form-control(type='text', placeholder='主播头像')
-                    .form-group
-                        label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 主播头衔
-                        .col-sm-6.col-md-6.col-lg-6
-                            input#hb-lc-name.form-control(type='text', placeholder='主播头衔')
-
-
-
-
+                    //- #hb-live-config-part1
+                    #hb-live-config-part1
+                        h3 基本信息
+                        hr
+                        //- hb-lc-name 直播名称
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-name') 直播名称
+                            .col-sm-6.col-md-6.col-lg-6
+                                input#hb-lc-name.form-control(type='text', name='hb-lc-name', placeholder='直播名称')
+                        //- end hb-lc-name
+                        //- hb-lc-id 直播编号id
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-id') 直播ID
+                            .col-sm-6.col-md-6.col-lg-6
+                                input#hb-lc-id.form-control(type='text', name='hb-lc-id', placeholder='直播ID')
+                        //- end hb-lc-id
+                        //- hb-lc-start
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-start') 开始时间
+                            .col-sm-6.col-md-6.col-lg-6
+                                .input-group
+                                    input#hb-lc-start.form-control(size='16', type='text', name='hb-lc-start', placeholder='请选择直播开始时间', readonly)
+                                    #dtpicker-start-open.input-group-addon
+                                        span.add-on
+                                            i.glyphicon.glyphicon-calendar
+                                    #dtpicker-start-reset.input-group-addon
+                                        span.add-on
+                                            i.glyphicon.glyphicon-remove
+                        //- end hb-lc-start 开始时间
+                        //- hb-lc-price
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-price') 价格
+                            .col-sm-6.col-md-6.col-lg-6
+                                input#hb-lc-price.form-control(type='text', name='hb-lc-price', placeholder='价格')
+                        //- end hb-lc-price 价格
+                        //- hb-lc-host
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-host') 主播姓名
+                            .col-sm-6.col-md-6.col-lg-6
+                                input#hb-lc-host.form-control(type='text', name='hb-lc-host', placeholder='主播姓名')
+                        //- end hb-lc-host
+                        //- hb-lc-avator 主播头像
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-avator') 主播头像
+                            .col-sm-6.col-md-6.col-lg-6
+                                .input-group
+                                    input#hb-lc-avator.form-control.file(type='file', name='hb-lc-avator', placeholder='主播头像', data-upload-url='#')
+                        //- end hb-lc-avator
+                        //- hb-lc-host-title 主播头衔
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-host-title') 主播头衔
+                                span(style='font-size: 12px;font-weight: normal;color: #666;') 30字以内
+                            .col-sm-6.col-md-6.col-lg-6
+                                textarea#hb-lc-host-title.form-control(rows='3', name='hb-lc-host-title', placeholder='主播头衔')
+                        //- end hb-lc-host-title
+                        //- end 基本信息
+                        br
+                        h3 个性化
+                        hr
+                        //- hb-lc-header-pic & hb-lc-title-pic 头图与标题图
+                        .form-group
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-header-pic') 头图
+                            .col-sm-6.col-md-6.col-lg-4
+                                .input-group
+                                    input#hb-lc-header-pic.form-control.file(type='file', name='hb-lc-header-pic', placeholder='头图', data-upload-url='#')
+                            label.control-label.col-sm-2.col-md-2.col-lg-2(for='hb-lc-title-pic') 标题图
+                                br
+                                span(style='font-size: 12px;font-weight: normal;color: #666;') 可选
+                                br
+                                span(style='font-size: 12px;font-weight: normal;color: #666;') 不传则使用文本
+                            .col-sm-6.col-md-6.col-lg-4
+                                .input-group
+                                    input#hb-lc-title-pic.form-control.file(type='file', name='hb-lc-title-pic', placeholder='标题图', data-upload-url='#')
+                        //- end hb-lc-header-pic & hb-lc-title-pic
+                        #group-banner-bg.form-group.row
+                            //- lenged.col-form-legend.col-sm-1.col-md-1.col-lg-1 背景
+                            label.control-label.col-sm-1.col-md-1.col-lg-1(for='hb-lc-banner-bg') 背景
+                            .form-check.form-check-inline
+                                label.form-check-label.col-lg-1
+                                    input.form-check-input(type='radio', name='hb-lc-banner-bg', value='op1', checked)
+                                    | 图片
+                                    #banner-bg-trick.col-sm-4.col-md-4.col-lg-4
+                                        .input-group
+                                            input#hb-lc-banner-bgpic.form-control.file(type='file', placeholder='', data-upload-url='#')
+                                label.form-check-label.col-lg-1
+                                    input.form-check-input(type='radio', name='hb-lc-banner-bg', value='op2', disabled)
+                                    | 纯色
+                                label.form-check-label.col-lg-1
+                                    input.form-check-input(type='radio', name='hb-lc-banner-bg', value='op3', disabled)
+                                    | 渐变
+                        br
+                        h3 live 简介
+                        hr
+                        //- hb-lc-live-intro
+                        .form-group
+                            .col-sm-12.col-md-12.col-lg-12
+                                textarea#hb-lc-live-intro.form-control(rows='6', name='hb-lc-live-intro' placeholder='假装是富文本')
+                        //- end hb-lc-live-intro
+                        br
+                        h3 主播简介
+                        hr
+                        //- hb-lc-host-intro
+                        .form-group
+                            .col-sm-12.col-md-12.col-lg-12
+                                textarea#hb-lc-host-intro.form-control(rows='6', name='hb-lc-host-intro', placeholder='假装是富文本')
+                        //- end hb-lc-host-intro
+                    //- end #hb-live-config-part1
+                    <button type="reset" class="btn btn-default" style="width: 100px; margin-right: 20px; border-radius: 2px;">取消</button>
+                    <button type="submit" class="btn btn-default" style="width: 100px; color: #fff; background-color: #919191; border-color: #919191; border-radius: 2px;">保存</button>
+                    //- end 基本信息
+        .hb-admin-footer
         script(src="/static/js/lib/jquery.js")
+        //- for file-input
+        script(src="/static/components/file-input/js/plugins/purify.js")
+        script(src="/static/components/file-input/js/fileinput.min.js")
+        script(src="/static/components/file-input/js/locales/zh.js")
+        //- end for file-input bootstrap.js below is needed if you wish to zoom and view file content in a larger detailed modal dialog
+
         script(src="/static/bootstrap/js/bootstrap.js")
         //- for datetime-picker
         script(src="/static/components/datetime-picker/bootstrap-datetimepicker.js")
         script(src="/static/components/datetime-picker/locales/bootstrap-datetimepicker.zh-CN.js")
         //- end for datetime-picker
+
         script(src="/static/js/admin.js")
