@@ -30,7 +30,8 @@ Mock the site: live(with jade)
 
 ```
 log
-│   
+│  
+├── 在 live 配置页 part1 加入文件上传 file-input（也是 Bootstrap 的），添加其余字段，并对字段进行整理
 ├── 在 live 配置页 part1 成功加入第一个 datetimepick (Bootstrap日期和时间表单组件)
 ├── 在做 live 配置页的过程中做掉一部分的 tab 切换效果（后续还有很多要考虑，如各个页面的切换效果实现，tab 是否 active）
 ├── 后台 admin 的 home 页（table 表的 display 设置为<code>none</code>了）

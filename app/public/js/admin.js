@@ -55,3 +55,33 @@ imgInputArr.map((i) => {
         'previewFileIcon': "<i class='glyphicon glyphicon-king'></i>", 
     });
 });
+
+
+
+
+
+/*
+ * Initial for quill -- rich text editor
+ */
+var toolbarOptions = [
+    [{ 'header': [1, 2, 3, 4, false] }],                    // 4, 5, 6,
+    // [{ 'font': [] }],
+    ['bold', 'italic', 'underline'],                     // toggled buttons    'strike'
+    // ['blockquote', 'code-block'],                     // 代码块
+    // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    // [{ 'script': 'sub'}, { 'script': 'super' }],         // superscript/subscript
+    // [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+    // [{ 'direction': 'rtl' }],                         // text direction
+    // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    // [{ 'color': [] }, { 'background': [] }],             // dropdown with defaults from theme
+    ['link', 'image'],                                            // 插入链接、图片
+    ['formula'],
+    // [{ 'align': [] }],                                // 暂时不先挂拍
+    ['clean']                                            // remove formatting button
+];
+
+var quill = new Quill('#editor', {
+    modules: { toolbar: toolbarOptions },
+    theme: 'snow'
+});
