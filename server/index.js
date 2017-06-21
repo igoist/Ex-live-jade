@@ -4,6 +4,8 @@ const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const config = require('config');
 
+const db = require('./lib/db');
+
 const routes = require('./route');
 
 let app = express();
@@ -23,6 +25,13 @@ app.use(session({
 app.use(routes);
 
 const port = config.site.port || 3000;
-app.listen(port, () => {
-    console.log(`server is running on :${port}`);
-});
+
+db.init(config.mysql)
+    .then(_ => {
+        app.listen(port, () => {
+            console.log(`server is running on :${port}`);
+        });
+    })
+    .catch(console.error)
+;
+
