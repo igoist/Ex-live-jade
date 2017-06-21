@@ -19,3 +19,4 @@ bootstrap/
 components/
 
 packages/
+dist/
