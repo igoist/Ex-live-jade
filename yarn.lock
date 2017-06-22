@@ -747,8 +747,8 @@ os-homedir@1.0.2:
   resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
 
 "paras@ssh://gitlab@gitlab.widget-inc.com:65422/huaban/lib/paras.git":
-  version "0.1.0"
-  resolved "ssh://gitlab@gitlab.widget-inc.com:65422/huaban/lib/paras.git#f93ec7e1282b49cf7dd9694579b3df5cee6ae99d"
+  version "0.1.1"
+  resolved "ssh://gitlab@gitlab.widget-inc.com:65422/huaban/lib/paras.git#6b46071660b6caaa71c75045fa72a866a657ea3d"
   dependencies:
     bluebird "3.5.0"
     ramda "0.24.1"
