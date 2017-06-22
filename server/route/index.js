@@ -1,9 +1,13 @@
-const express = require("express");
+const express = require('express');
 
-const liveRouter = require("./live");
+const authMW = require('../middleware/auth');
+
+const liveRouter = require('./live');
+const adminRouter = require('./admin');
 
 let Router = express.Router();
 
-Router.use("/", liveRouter);
+Router.use('/nonono/admin/', authMW.authLayer, authMW.adminLayer, adminRouter);
+Router.use('/', liveRouter);
 
 module.exports = Router;

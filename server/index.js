@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const RedisStore = require('connect-redis')(session);
 const config = require('config');
 
 const db = require('./lib/db');
@@ -13,9 +13,9 @@ let app = express();
 app.set('view engine', 'jade');
 app.set('views', './app/views');
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(session({
     resave: false,
-    store: new RedisStore(config.redis),
     secret: 'huaban live',
     saveUninitialized: true,
     cookie: { secure: true }

@@ -1,9 +1,9 @@
 const express = require('express');
 let Router = express.Router();
 
-Router.use('/:id', (_, res) => {
-    res.render('index');
-});
+Router.get('/', (_, res) => res.render('index'));
+
+Router.use('/:id', (_, res) => res.render('index'));
 
 Router.use('/static', express.static('public'));
 
