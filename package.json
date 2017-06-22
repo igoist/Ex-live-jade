@@ -1,15 +1,16 @@
 {
-  "name": "Ex-huaban-live-pure",
-  "version": "0.0.1",
+  "name": "huabanlive",
+  "version": "0.0.2",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "node app/app.js"
+    "test": "cd app && node app.js"
   },
   "author": "igoist",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "quill-delta-to-html": "^0.3.0"
   }
 }

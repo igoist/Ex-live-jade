@@ -143,11 +143,6 @@ $c91: #919191;
         }
         #hb-live-config {
             margin-top: 12px;
-            hr {
-            }
-            .form-group {
-                // margin: 0px;
-            }
             .form-control {
                 border-radius: 2px;
             }
@@ -197,4 +192,33 @@ $c91: #919191;
     margin-bottom: 120px;
     width: 0;
     height: 0;
+}
+
+.et-pop {
+    position: absolute;
+    top: 2px;
+    left: 200px;
+    &:before {
+        content: '宽度' !important;
+    }
+    input {
+        width: 80px !important; 
+    }
+    label {
+        margin-bottom: 0px;
+        &:after {
+            content: '标注';
+            font-weight: normal;
+            line-height: 26px;
+            margin: 0 8px;
+        }
+    }
+}
+
+#et-pop-svg .et-pop-svg-stroke {
+    stroke: #4af;
+}
+
+#et-pop-svg .et-pop-svg-fill {
+    fill: #4af;
 }

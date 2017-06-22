@@ -57,9 +57,6 @@ imgInputArr.map((i) => {
 });
 
 
-
-
-
 /*
  * Initial for quill -- rich text editor
  */
@@ -76,7 +73,8 @@ var toolbarOptions = [
     // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
     // [{ 'color': [] }, { 'background': [] }],             // dropdown with defaults from theme
     ['link', 'image'],                                            // 插入链接、图片
-    ['formula'],
+    ['et-img'],
+    // ['formula'],
     // [{ 'align': [] }],                                // 暂时不先挂拍
     ['clean']                                            // remove formatting button
 ];
@@ -84,4 +82,54 @@ var toolbarOptions = [
 var quill = new Quill('#editor', {
     modules: { toolbar: toolbarOptions },
     theme: 'snow'
+});
+
+l = (() => {
+    return quill.getLength();
+});
+
+// JSON.stringify
+
+var et = document.querySelector('.ql-et-img');
+var etPopoverImg;
+var etPopoverPos;
+et.addEventListener('click', () => {
+    etPopoverPos = quill.getSelection();
+    etPopoverImg = quill.getContents(etPopoverPos);
+    console.log(etPopoverImg);
+    etPopover.style.display = 'block';
+    // quill.format('width', '200px');
+});
+
+// var toolbar = quill.getModule('toolbar');
+
+
+/**
+ * play a trick
+ * 
+ * .et-pop
+ *   &::before
+ *   input
+ *   label::after
+ *   input
+ *   a#et-pop-action.ql-action:after
+ */
+var etPopover = document.createElement('div');
+etPopover.style.display = 'none';
+etPopover.classList.add('et-pop');
+etPopover.classList.add('ql-tooltip');
+etPopover.classList.add('ql-editing');
+etPopover.innerHTML = '<input name="et-pop-width" type="text" value="321"/><label></label><input name="et-pop-alt" type="text" value="图1" /><a id="et-pop-action" class="ql-action"></a>';
+
+$('#editor').append(etPopover);
+$('.ql-et-img').append('<svg id="et-pop-svg" viewBox="0 0 18 18"><rect class="ql-stroke et-pop-svg-stroke" height="10" width="12" x="3" y="4" fill="purple"></rect><circle class="ql-fill et-pop-svg-fill" cx="6" cy="7" r="1"></circle><polyline class="ql-even ql-fill et-pop-svg-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline> </svg>');
+
+
+document.getElementById('et-pop-action').addEventListener('click', function() {
+    // console.log($('input[name=et-pop-width]').val());
+    // console.log($('input[name=et-pop-alt]').val());
+    quill.setSelection(etPopoverPos);
+    quill.format('width', $('input[name=et-pop-width]').val() + 'px');
+    quill.format('alt', $('input[name=et-pop-alt]').val() + '');
+    etPopover.style.display = 'none';
 });
