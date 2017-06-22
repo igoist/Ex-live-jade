@@ -7,6 +7,7 @@ const P = require('paras');
 const S= require('sanctuary');
 const session = require('../lib/session');
 const userHelper = require('../helper/user');
+const io = require('../helper/io');
 
 // redirectToHome :: Response -> IO ()
 const redirectToHome = res => res.redirect('/');
@@ -29,7 +30,7 @@ const authLayer = (req, res, next) => {
                 next();
             }
         ))
-        .catch(error => res.send(error))
+        .catch(io.renderError(res))
     ;
 };
 
