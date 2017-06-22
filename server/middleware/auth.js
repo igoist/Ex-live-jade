@@ -17,7 +17,7 @@ const authLayer = (req, res, next) => {
     return Promise.resolve(cookie)
         .then(S.toMaybe)
         .then(P.mbinds([
-            R.prop('sid'),
+            P.propM('sid'),
             session.getSession
         ]))
         .then(S.maybeToNullable)
