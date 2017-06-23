@@ -103,3 +103,24 @@ btnSubmit.addEventListener('click', (e) => {
  * hb-lc-host-title -- $("textarea#hb-lc-host-title").val()
  * 
  */
+
+// var f = new FormData();
+// f.append("file", $("#file").val());
+
+// $('#upload').click(() => {
+//     // console.log("x");
+//     var data = new FormData(f);
+//     console.log(data)
+//     $.ajax({
+//         url: 'http://localhost:3000/wodehoutai/api/upload/',
+//         type: 'POST',
+//         cache: false,
+//         data: data,
+//         processData: false,
+//         contentType: false
+//     }).done(function(res) {
+//         console.log(res);
+//     }).fail(function(res) {
+//         console.log(res);
+//     });
+// })

@@ -17,7 +17,8 @@ Mock the site: live(with jade)
 - [x] 加入(bootstrap-fileinput)[https://github.com/kartik-v/bootstrap-fileinput]，用法亦可参看(这里)[http://www.cnblogs.com/landeanfen/p/5007400.html]
 - [x] 后台 hb-live-config 之 hb-live-config-part1 主要内容（尚未完成富文本编辑器）
 - [x] 整理 Form 字段名
-- [ ] 加入富文本编辑器
+- [x] 加入富文本编辑器
+- [ ] 修正富文本编辑器，做一部分自定义内容
 - [ ] 试做 tabs 切换效果
 
 <br />
@@ -31,6 +32,7 @@ Mock the site: live(with jade)
 ```
 log
 │  
+├── 合并 server 内容，运行 node server，第一次运行后将 server/lib/db 中 33 行注释掉，以防重新建表
 ├── 加入富文本编辑器，放弃原先的 html 源码需求，自己强行写了 img 宽度调整选项，应该还得调整
 ├── 将主要用到的几个 components 文件提交到库
 ├── 加入了 rich-text-editor，但尚没有找到源码编辑扩展，只能算半成品
