@@ -18,6 +18,7 @@
     "ioredis": "^3.1.1",
     "jade": "^1.11.0",
     "js-yaml": "^3.8.4",
+    "multer": "^1.3.0",
     "mysql2": "^1.3.5",
     "paras": "ssh://gitlab@gitlab.widget-inc.com:65422/huaban/lib/paras.git",
     "petaline": "ssh://gitlab@gitlab.widget-inc.com:65422/huaban/lib/petaline.git",
@@ -25,6 +26,6 @@
     "request": "^2.81.0",
     "sanctuary": "^0.13.2",
     "sequelize": "^4.1.0",
-    "upyun": "^3.0.0"
+    "upyun": "^3.0.1"
   }
 }

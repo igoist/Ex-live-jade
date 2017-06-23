@@ -12,16 +12,6 @@ const model = {
         allowNull: false
     },
 
-    width: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-
-    height: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-
     type: Sequelize.STRING(12)
 };
 
