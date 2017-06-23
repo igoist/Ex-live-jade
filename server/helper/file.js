@@ -1,7 +1,8 @@
 const fs = require('fs');
 const crypto = require('crypto');
 const R = require('ramda');
-const { E } = require('paras');
+const P = require('paras');
+const { E } = P;
 const Promise = require('bluebird');
 const UPYUN = require('upyun');
 const config = require('config');
@@ -11,6 +12,8 @@ const { File } = require('../lib/db').Model;
 const upyunConfig = config.upyun;
 const bucket = new UPYUN.Bucket(upyunConfig.bucket, upyunConfig.username, upyunConfig.password);
 const upyun = new UPYUN.Client(bucket);
+
+const readBuffer = P.curryCallback(fs.readFile);
 
 const cryptoFileWith = R.curry((name, file) => {
     let hash = crypto.createHash(name);
@@ -26,16 +29,19 @@ const cryptoFileWith = R.curry((name, file) => {
 
 const uploadToUpyun = R.curry((file, key) => {
     const path = `/${key}`;
-    return upyun.putFile(path, file.path)
+    return readBuffer(file.path)
+        .then(buffer => upyun.putFile(path, buffer))
         .then(R.when(
             R.equals(false),
             _ => E.throwMsg(`UPYUN upload failed: ${file.path}`)
         ))
-        .then(_ => {
+        .then(result => {
             return {
+                width: result.width,
+                height: result.height,
                 bucket: upyunConfig.bucket,
                 key,
-                type: file.mimetype
+                type: result.type
             };
         })
     ;
@@ -74,6 +80,7 @@ const saveFile = R.curry((key, file) => {
     return uploadToUpyun(file, key)
         .then(result => File.create(result))
         .then(PP.toJSON)
+        .then(assocUrlWhen)
     ;
 });
 
