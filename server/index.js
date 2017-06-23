@@ -6,8 +6,6 @@ const config = require('config');
 
 const db = require('./lib/db');
 
-const routes = require('./route');
-
 let app = express();
 
 app.set('view engine', 'jade');
@@ -21,13 +19,15 @@ app.use(session({
     cookie: { secure: true }
 }));
 
-/** 载入所有路由 */
-app.use(routes);
-
 const port = config.site.port || 3000;
 
 db.init(config.mysql)
+    /** 载入所有路由 */
     .then(_ => {
+        const routes = require('./route');
+        app.use(routes);
+    })
+    .then(() => {
         app.listen(port, () => {
             console.log(`server is running on :${port}`);
         });

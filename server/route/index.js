@@ -7,7 +7,7 @@ const adminRouter = require('./admin');
 
 let Router = express.Router();
 
-Router.use('/nonono/admin/', authMW.authLayer, authMW.adminLayer, adminRouter);
-Router.use('/', liveRouter);
+Router.use('/nonono/admin/', /* authMW.authLayer, authMW.adminLayer, */ adminRouter);
+/* Router.use('/', liveRouter); */
 
 module.exports = Router;
