@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .hb-admin {
   margin: 0; }
   .hb-admin .hb-nav-wrap {
@@ -136,5 +137,50 @@
   margin-bottom: 120px;
   width: 0;
   height: 0; }
+
+.et-pop {
+  position: absolute;
+  top: 2px;
+  left: 200px; }
+  .et-pop:before {
+    content: '宽度' !important; }
+  .et-pop input {
+    width: 80px !important;
+    outline: none; }
+  .et-pop label {
+    margin-bottom: 0px; }
+    .et-pop label:after {
+      content: '标注';
+      font-weight: normal;
+      line-height: 26px;
+      margin: 0 8px; }
+
+#et-pop-svg .et-pop-svg-stroke {
+  stroke: #4af; }
+
+#et-pop-svg .et-pop-svg-fill {
+  fill: #4af; }
+
+html {
+  font-size: 16px; }
+
+#editor .ql-editor h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #000;
+  margin: .8em 0; }
+#editor .ql-editor h4 {
+  -webkit-margin-before: 1.33em;
+  -webkit-margin-after: 1.33em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold; }
+#editor .ql-editor hr {
+  height: 0px;
+  border: 2px solid #ededed;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+#editor .ql-editor img {
+  width: 200px; }
 
 /*# sourceMappingURL=admin.css.map */

@@ -7,11 +7,6 @@ app.set('views', './views');
 
 app.use('/static', express.static('public'));
 
-
-// var setLesson = function(req, res, next) {
-//     // req.lesson = 
-// };
-
 var getInitialObj = function() {
     // var json = [
     //     {
@@ -142,6 +137,6 @@ app.get('/admin/', function(req, res) {
 
 
 app.listen(3198, function() {
-    console.log('test');
+    console.log('\033[1;32mnow is in the dev nev\033[0m'); // \033[1;32;40m
 });
 

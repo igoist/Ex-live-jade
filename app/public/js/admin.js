@@ -50,86 +50,56 @@ var imgInputArr = [$('#hb-lc-avator'), $('#hb-lc-header-pic'), $('#hb-lc-title-p
 imgInputArr.map((i) => {
     i.fileinput({
         'language': 'zh',
-        'showUpload': false,
+        'uploadUrl': 'http://localhost:3000/wodehoutai/api/upload/',
+        'showUpload': true,
         'allowedFileExtensions' : ['jpg', 'png'],
         'previewFileIcon': "<i class='glyphicon glyphicon-king'></i>", 
     });
 });
 
+var btnSubmit = $('.hb-live-submit-btn')[0];
+btnSubmit.addEventListener('click', (e) => {
+    // console.log(e);
+    e.preventDefault();
+    // var data = {
+    //     title: $('input[name=hb-lc-name').val(),
+    //     videoId: $('input[name=hb-lc-id').val(),
+    //     beginAt: $('input[name=hb-lc-start').val(),
+    //     price: $('input[name=hb-lc-price').val(),
+    //     desc: $('input[name=  hb-lc-live-intro').val(),
+    //     // banner: $('input[name=hb-lc-id').val(),
+    //     anchorName: $('input[name=hb-lc-host').val(),
+    //     anchorAvatar: $('input[name=hb-lc-avator').val(),
+    //     anchorTtitle: $('input[name=hb-lc-host-title').val(),
+    //     anchorDesc: $('input[name=hb-lc-host-intro').val()
+    //     // coursetext: $('input[name=hb-lc-id').val(),
+    //     // coursewaves: [1,2,3]
+    // };
+    // console.log(JSON.stringify(data, null, 4));
+    var dataImg1 = {
+        // file: $('input[name=hb-lc-avator').val()
+        file: $('.kv-file-content')[0].firstElementChild.src
+    };
+    // console.log(dataImg1);
+    // $.ajax({
+    //     url : "/wodehoutai/api/upload/",
+    //     type: "POST",
+    //     data : dataImg1,
+    //     success: function(data, textStatus, jqXHR)
+    //     {
+    //         console.log(data);
+    //     },
+    //     error: function (jqXHR, textStatus, errorThrown)
+    //     {
+    //     }
+    // });
 
-/*
- * Initial for quill -- rich text editor
- */
-var toolbarOptions = [
-    [{ 'header': [1, 2, 3, 4, false] }],                    // 4, 5, 6,
-    // [{ 'font': [] }],
-    ['bold', 'italic', 'underline'],                     // toggled buttons    'strike'
-    // ['blockquote', 'code-block'],                     // 代码块
-    // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    // [{ 'script': 'sub'}, { 'script': 'super' }],         // superscript/subscript
-    // [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-    // [{ 'direction': 'rtl' }],                         // text direction
-    // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-    // [{ 'color': [] }, { 'background': [] }],             // dropdown with defaults from theme
-    ['link', 'image'],                                            // 插入链接、图片
-    ['et-img'],
-    // ['formula'],
-    // [{ 'align': [] }],                                // 暂时不先挂拍
-    ['clean']                                            // remove formatting button
-];
-
-var quill = new Quill('#editor', {
-    modules: { toolbar: toolbarOptions },
-    theme: 'snow'
 });
-
-l = (() => {
-    return quill.getLength();
-});
-
-// JSON.stringify
-
-var et = document.querySelector('.ql-et-img');
-var etPopoverImg;
-var etPopoverPos;
-et.addEventListener('click', () => {
-    etPopoverPos = quill.getSelection();
-    etPopoverImg = quill.getContents(etPopoverPos);
-    console.log(etPopoverImg);
-    etPopover.style.display = 'block';
-    // quill.format('width', '200px');
-});
-
-// var toolbar = quill.getModule('toolbar');
 
 
 /**
- * play a trick
  * 
- * .et-pop
- *   &::before
- *   input
- *   label::after
- *   input
- *   a#et-pop-action.ql-action:after
+ * 
+ * hb-lc-host-title -- $("textarea#hb-lc-host-title").val()
+ * 
  */
-var etPopover = document.createElement('div');
-etPopover.style.display = 'none';
-etPopover.classList.add('et-pop');
-etPopover.classList.add('ql-tooltip');
-etPopover.classList.add('ql-editing');
-etPopover.innerHTML = '<input name="et-pop-width" type="text" value="321"/><label></label><input name="et-pop-alt" type="text" value="图1" /><a id="et-pop-action" class="ql-action"></a>';
-
-$('#editor').append(etPopover);
-$('.ql-et-img').append('<svg id="et-pop-svg" viewBox="0 0 18 18"><rect class="ql-stroke et-pop-svg-stroke" height="10" width="12" x="3" y="4" fill="purple"></rect><circle class="ql-fill et-pop-svg-fill" cx="6" cy="7" r="1"></circle><polyline class="ql-even ql-fill et-pop-svg-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline> </svg>');
-
-
-document.getElementById('et-pop-action').addEventListener('click', function() {
-    // console.log($('input[name=et-pop-width]').val());
-    // console.log($('input[name=et-pop-alt]').val());
-    quill.setSelection(etPopoverPos);
-    quill.format('width', $('input[name=et-pop-width]').val() + 'px');
-    quill.format('alt', $('input[name=et-pop-alt]').val() + '');
-    etPopover.style.display = 'none';
-});

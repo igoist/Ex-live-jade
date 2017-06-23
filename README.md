@@ -31,6 +31,7 @@ Mock the site: live(with jade)
 ```
 log
 │  
+├── 加入富文本编辑器，放弃原先的 html 源码需求，自己强行写了 img 宽度调整选项，应该还得调整
 ├── 将主要用到的几个 components 文件提交到库
 ├── 加入了 rich-text-editor，但尚没有找到源码编辑扩展，只能算半成品
 ├── 在 live 配置页 part1 加入文件上传 file-input（也是 Bootstrap 的），添加其余字段，并对字段进行整理

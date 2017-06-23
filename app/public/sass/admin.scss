@@ -202,7 +202,8 @@ $c91: #919191;
         content: '宽度' !important;
     }
     input {
-        width: 80px !important; 
+        width: 80px !important;
+        outline: none;
     }
     label {
         margin-bottom: 0px;
@@ -221,4 +222,30 @@ $c91: #919191;
 
 #et-pop-svg .et-pop-svg-fill {
     fill: #4af;
+}
+
+html {
+    font-size: 16px;
+}
+
+#editor .ql-editor {
+    h3 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: #000;
+        margin: .8em 0;
+    }
+    h4 {
+        -webkit-margin-before: 1.33em;
+        -webkit-margin-after: 1.33em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        font-weight: bold;
+    }
+    hr {
+        height:0px; border: 2px solid #ededed; margin-top:10px; margin-bottom:10px;
+    }   
+    img {
+        width: 200px;
+    }
 }

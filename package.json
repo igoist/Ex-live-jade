@@ -1,10 +1,11 @@
 {
   "name": "huabanlive",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "cd app && node app.js"
+    "test": "cd app && node app.js",
+    "t": "node server"
   },
   "author": "igoist",
   "dependencies": {
