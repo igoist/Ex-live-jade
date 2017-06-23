@@ -1,0 +1,17 @@
+---
+site:
+    port: 3000
+
+petaline:
+    host: localhost
+    port: 12345
+
+mysql:
+    host: localhost
+    username: root
+    password: password
+    database: live
+
+session:
+    host: localhost
+    port: 6379
