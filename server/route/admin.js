@@ -1,9 +1,8 @@
-/** 列表页 */
 const express = require('express');
 let Router = express.Router();
 
-const liveHelper = require('../../helper/live');
-const io = require('../../helper/io');
+const liveHelper = require('../helper/live');
+const io = require('../helper/io');
 
 Router.get('/', (req, res) => {
     const { page, limit } = req.query;
