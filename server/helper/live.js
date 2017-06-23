@@ -34,4 +34,12 @@ const getList = options => {
     ;
 };
 
+// 创建
+const create = data => {
+    return Live.create(data)
+        .then(model => model.toJSON())
+    ;
+};
+
 exports.getList = getList;
+exports.create = create;
