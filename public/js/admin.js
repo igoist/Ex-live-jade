@@ -50,7 +50,7 @@ var imgInputArr = [$('#hb-lc-avator'), $('#hb-lc-header-pic'), $('#hb-lc-title-p
 imgInputArr.map((i) => {
     i.fileinput({
         'language': 'zh',
-        'uploadUrl': 'http://localhost:3000/wodehoutai/api/upload/',
+        'uploadUrl': '/wodehoutai/api/upload/',
         'showUpload': true,
         'allowedFileExtensions' : ['jpg', 'png'],
         'previewFileIcon': "<i class='glyphicon glyphicon-king'></i>", 

@@ -9,7 +9,7 @@ const db = require('./lib/db');
 let app = express();
 
 app.set('view engine', 'jade');
-app.set('views', './app/views');
+app.set('views', './views');
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({

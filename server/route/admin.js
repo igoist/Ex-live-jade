@@ -9,11 +9,15 @@ const io = require('../helper/io');
 
 // 后台首页
 Router.get('/', (req, res) => {
-    const { page, limit } = req.query;
+    // const { page, limit } = req.query;
+
+    res.render('admin/index');
+    /*
     return liveHelper.getList({ page, limit })
         .then(io.send(res))
         .catch(io.sendError(res))
     ;
+    */
 });
 
 // 文件上传

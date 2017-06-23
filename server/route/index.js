@@ -8,6 +8,6 @@ const adminRouter = require('./admin');
 let Router = express.Router();
 
 Router.use('/wodehoutai/', /* authMW.authLayer, authMW.adminLayer, */ adminRouter);
-/* Router.use('/', liveRouter); */
+Router.use('/', liveRouter);
 
 module.exports = Router;
