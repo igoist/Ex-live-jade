@@ -17,9 +17,19 @@ Router.get('/', (req, res) => {
 });
 
 // 文件上传
-Router.post('/upload', fileMW.formLayer, (req, res) => {
+Router.post('/api/upload', fileMW.formLayer, (req, res) => {
     const { file } = req;
     return fileHelper.saveWhen(file)
+        .then(io.send(res))
+        .catch(io.sendError(res))
+    ;
+});
+
+// 新建直播
+Router.post('/api/live', (req, res) => {
+    const body = req.body;
+
+    return liveHelper.create(body)
         .then(io.send(res))
         .catch(io.sendError(res))
     ;

@@ -39,7 +39,12 @@ const model = {
     // 主播头衔
     anchorTitle: Sequelize.STRING,
     // 主播简介
-    anchorDesc: Sequelize.TEXT
+    anchorDesc: Sequelize.TEXT,
+
+    // 课程资料
+    courseText: Sequelize.TEXT,
+    // 课程附件
+    couseWaves: Sequelize.TEXT
 };
 
 module.exports = model;

@@ -34,4 +34,3 @@ db.init(config.mysql)
     })
     .catch(console.error)
 ;
-
